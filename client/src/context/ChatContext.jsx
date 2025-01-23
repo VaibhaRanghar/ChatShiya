@@ -28,7 +28,7 @@ const ChatContextProvider = ({ children, user }) => {
 
   //SOCKET CONNECTION
   useEffect(() => {
-    const newSocket = io("http://localhost:3000");
+    const newSocket = io("https://chatshiya.onrender.com/");
     setSocket(newSocket);
     return () => {
       newSocket.disconnect();
@@ -178,7 +178,6 @@ const ChatContextProvider = ({ children, user }) => {
     setUserChats((prev) => [...prev, response]);
   }, []);
 
-  
   const markAllNotificationsAsRead = useCallback((notification) => {
     const mNotifications = notification.map((n) => {
       return { ...n, isRead: true };
