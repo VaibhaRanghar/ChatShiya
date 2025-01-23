@@ -9,6 +9,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { ChatContextProvider } from "./context/ChatContext";
 import { lazy, Suspense } from "react";
+import SideBar from "./components/SideBar";
 const LazyNavBar = lazy(() => import("./components/NavBar"));
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={user ? <Chat /> : <Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/test" element={<SideBar />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Container>

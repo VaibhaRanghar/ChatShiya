@@ -8,3 +8,73 @@
     align-items: center;
     width: 100vw;
 }
+.sideBar {
+    display: none;
+    visibility: hidden;
+}
+
+.container {
+    display: block;
+    flex-direction: column;
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    max-height: fit-content;
+    max-width: fit-content;
+    cursor: pointer;
+}
+.container.shifted {
+    margin-left: -400px; /* Adjust this value based on sidebar width */
+}
+
+
+.lines {
+    height: 2px;
+    width: 25px;
+    background-color: white;
+    margin: 3px;
+}
+
+.side {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-right: 1px solid rgb(47, 47, 47);
+    border-left: 0px;
+    min-height: 100vh;
+
+    /* Initial state */
+    transform: translateX(-100%); /* Start off-screen */
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition properties */
+}
+
+.side.open {
+    transform: translateX(0); /* Slide in */
+    opacity: 1; /* Fully visible */
+}
+
+.side.closed {
+    transform: translateX(-100%); /* Slide out */
+    opacity: 0; /* Fully hidden */
+    
+}
+
+.component {
+    border-bottom: 0.1px solid rgb(55, 55, 55);
+    padding: 0px 0px 0px 10px;
+}
+
+.over{
+    display: flex;
+    justify-content: flex-start;
+}
+@media (max-width: 1000px) {
+    .over {
+       visibility: hidden;
+       display: none;
+    }
+    .sideBar{
+        visibility: visible;
+        display: flex;
+    }
+}

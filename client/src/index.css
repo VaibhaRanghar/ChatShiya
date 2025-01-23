@@ -27,9 +27,15 @@ body{
     color: white;
     position: relative;
     border-bottom: 1px solid rgb(100, 100, 100);
-    width: 380px;
+    max-width: 380px;
+    min-width: fit-content;
   }
   
+  .user-card:hover{
+    background-color: #282828;
+    border-radius: 5px;
+  }
+
   .user-card .text-content {
     width: 170px;
   }
@@ -208,4 +214,10 @@ body{
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width:1000px){
+    *{
+      font-size: small;
+    }
   }
